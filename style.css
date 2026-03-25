@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #b30000, #ff0000);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.hero p {
+    margin: 5px 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* BRANDS */
+.brands {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.brand-card {
+    width: 280px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.brand-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.brand-info {
+    padding: 10px;
+}
+
+.brand-info h2 {
+    margin: 0;
+    color: #d60000;
+}
+
+.brand-info p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+/* STEPS */
+.steps {
+    text-align: center;
+    padding: 20px;
+}
+
+.steps h2 {
+    margin-bottom: 20px;
+}
+
+.step-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.step {
+    width: 200px;
+}
+
+.step img {
+    width: 80px;
+    height: 80px;
+}
+
+.step p {
+    font-size: 13px;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #222;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.nav-item {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+}
+
+.nav-item span {
+    display: block;
+}
+
+.nav-item.active {
+    color: gold;
+}

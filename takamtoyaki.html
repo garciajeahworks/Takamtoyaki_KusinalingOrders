@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Takamto-yaki Menu</title>
+<link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+
+<header class="header">
+    <h2>🐙 Takamto-yaki</h2>
+    <p>Takoyaki & Street Snacks</p>
+</header>
+
+<div class="menu">
+    <div class="item">
+        <div>
+            <h4>Classic Cheesy</h4>
+            <p>8 pcs cheesy takoyaki</p>
+            <span>₱95</span>
+        </div>
+        <button onclick="addToCart('Classic Cheesy', 8, 95)">Add 8 pcs</button>
+        <button onclick="addToCart('Classic Cheesy', 12, 130)">Add 12 pcs</button>
+    </div>
+
+    <div class="item">
+        <div>
+            <h4>Cheesy Shrimp</h4>
+            <p>8 pcs shrimp-filled takoyaki</p>
+            <span>₱119</span>
+        </div>
+        <button onclick="addToCart('Cheesy Shrimp', 8, 119)">Add 8 pcs</button>
+        <button onclick="addToCart('Cheesy Shrimp', 12, 165)">Add 12 pcs</button>
+    </div>
+
+    <div class="item">
+        <div>
+            <h4>Cheesy Chicken Ball</h4>
+            <p>Chicken filling with creamy cheese</p>
+            <span>₱99</span>
+        </div>
+        <button onclick="addToCart('Cheesy Chicken Ball', 8, 99)">Add 8 pcs</button>
+        <button onclick="addToCart('Cheesy Chicken Ball', 12, 145)">Add 12 pcs</button>
+    </div>
+
+    <div class="item highlight">
+        <div>
+            <h4>Cheese Boom</h4>
+            <p>12 pcs overloaded with cheese 🧀</p>
+            <span>₱205</span>
+        </div>
+        <button onclick="addToCart('Cheese Boom', 12, 205)">Add 12 pcs</button>
+    </div>
+</div>
+
+<!-- CART -->
+<div class="cart">
+    <div>
+        <strong>Total: ₱<span id="total">0</span></strong>
+    </div>
+    <button onclick="openCheckout()">Checkout</button>
+    <button onclick="clearCart()" style="background-color:#f44336; color:white;">Clear Orders</button>
+</div>
+
+<!-- CHECKOUT -->
+<div id="checkout-modal" class="modal">
+    <div class="modal-content">
+        <h3>Checkout</h3>
+         <p style="font-size:0.85rem; color:#555; margin-bottom:15px;">
+            <strong>NOTE:</strong> PLEASE MESSAGE US ON OUR PAGE OR MAIN ACCOUNT WITH A SCREENSHOT IF YOU ALREADY PLACED THE ORDER SO WE CAN PREPARE IT. <br>
+            ANY ORDERS PLACED HERE WITHOUT PROVIDING A SCREENSHOT WILL NOT BE PREPARED. <br>
+            For GCash payment: <strong>09937922827 Desirey F</strong>
+        </p>
+        <input type="text" id="name" placeholder="Facebook Name">
+        <input type="text" id="address" placeholder="Delivery Address">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <button onclick="placeOrder()">Place Order</button>
+        <button onclick="closeCheckout()">Cancel</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

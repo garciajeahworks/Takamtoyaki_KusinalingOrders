@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KusinaLing Menu</title>
+<link rel="stylesheet" href="menu.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f8f8f8;
+        color: #333;
+    }
+
+    .header {
+        background-color: #ff6b6b;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        padding: 10px;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .menu h3 {
+        margin-top: 25px;
+        margin-bottom: 10px;
+        color: #ff6b6b;
+        font-size: 1.2rem;
+    }
+
+    .item {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .item div h4 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .item div p {
+        margin: 5px 0 0;
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .item button {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .item button:hover {
+        background-color: #ff4b4b;
+    }
+
+    .cart {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 15px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .cart h3 {
+        margin-top: 0;
+        color: #ff6b6b;
+    }
+
+    #cart-list {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    #cart-list li {
+        margin-bottom: 5px;
+        font-size: 0.95rem;
+    }
+
+    .cart button {
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    /* Checkout Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 400px;
+    }
+
+    .modal-content input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .modal-content button {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .modal-content button:hover {
+        background-color: #ff4b4b;
+    }
+
+    @media(max-width: 480px) {
+        .item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .item button {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header class="header">
+    🍛 KusinaLing Menu
+</header>
+
+<div class="menu">
+
+    <h3>🍗 Wings</h3>
+    <div class="item">
+        <div>
+            <h4>Honey Garlic</h4>
+            <p>₱99 - Crispy wings glazed with sweet honey garlic sauce.</p>
+        </div>
+        <button onclick="addToCart('Honey Garlic', 99)">Add</button>
+    </div>
+
+    <div class="item">
+        <div>
+            <h4>Classic Buffalo</h4>
+            <p>₱99 - Spicy buffalo wings, perfect for your cravings.</p>
+        </div>
+        <button onclick="addToCart('Classic Buffalo', 99)">Add</button>
+    </div>
+
+    <div class="item">
+        <div>
+            <h4>Garlic Parmesan</h4>
+            <p>₱99 - Savory wings with garlic butter and parmesan cheese.</p>
+        </div>
+        <button onclick="addToCart('Garlic Parmesan', 99)">Add</button>
+    </div>
+
+    <h3>🔥 Sweet & Spicy</h3>
+    <div class="item">
+        <div>
+            <h4>Sweet Chili</h4>
+            <p>₱99 - Balanced sweet and spicy wings for every bite.</p>
+        </div>
+        <button onclick="addToCart('Sweet Chili', 99)">Add</button>
+    </div>
+
+    <div class="item">
+        <div>
+            <h4>Korean Soy Garlic</h4>
+            <p>₱99 - Korean-style wings with soy garlic flavor.</p>
+        </div>
+        <button onclick="addToCart('Korean Soy Garlic', 99)">Add</button>
+    </div>
+
+    <div class="item">
+        <div>
+            <h4>Salted Egg</h4>
+            <p>₱99 - Creamy salted egg wings with crispy coating.</p>
+        </div>
+        <button onclick="addToCart('Salted Egg', 99)">Add</button>
+    </div>
+
+    <h3>📦 Bundles</h3>
+    <div class="item">
+        <div>
+            <h4>Solo Feast</h4>
+            <p>₱124 - One flavor of wings served with rice. Perfect solo meal!</p>
+        </div>
+        <button onclick="addToCart('Solo Feast', 124)">Add</button>
+    </div>
+
+    <div class="item">
+        <div>
+            <h4>Sharing Pack</h4>
+            <p>₱180 - Mix of flavors, ideal for sharing with friends or family.</p>
+        </div>
+        <button onclick="addToCart('Sharing Pack', 180)">Add</button>
+    </div>
+
+</div>
+
+<!-- CART -->
+<div class="cart">
+    <h3>🛒 Cart</h3>
+    <ul id="cart-list"></ul>
+    <p>Total: ₱<span id="total">0.00</span></p>
+    <button onclick="openCheckout()">Checkout</button>
+    <button onclick="clearCart()">Clear Cart</button>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkout-modal" class="modal">
+    <div class="modal-content">
+        <h3>Checkout</h3>
+            <p style="font-size:0.85rem; color:#555; margin-bottom:15px;">
+            <strong>NOTE:</strong> PLEASE MESSAGE US ON OUR PAGE OR MAIN ACCOUNT WITH A SCREENSHOT IF YOU ALREADY PLACED THE ORDER SO WE CAN PREPARE IT. <br>
+            ANY ORDERS PLACED HERE WITHOUT PROVIDING A SCREENSHOT WILL NOT BE PREPARED. <br>
+            For GCash payment: <strong>09937922827 Desirey F</strong>
+        </p>
+        <input type="text" id="name" placeholder="Facebook Name">
+        <input type="text" id="address" placeholder="Delivery Address">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <button onclick="placeOrder()">Place Order</button>
+        <button onclick="closeCheckout()">Cancel</button>
+    </div>
+</div>
+
+<script src="script1.js"></script>
+</body>
+</html>
